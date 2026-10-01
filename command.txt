@@ -1,0 +1,14 @@
+source environment.sh 150
+
+cd quick_start
+
+./terminal1_ros2.sh 
+
+./terminal5_rosbridge.sh
+
+./camera_data_relays.sh
+
+cd quick_start
+./record_rosbags.sh
+
+ros2 service call /switch_to_gamepad_mode std_srvs/srv/Trigger {}

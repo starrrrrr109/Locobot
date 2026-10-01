@@ -1,0 +1,112 @@
+bag path: /workspace/rosbags/locobot_20260727_084208
+
+[tracker1]
+topic: /tracker1/vive_pose_abs
+message_count: 7091
+first_bag_timestamp_ns: 1785141731197821802
+first_bag_timestamp_sec: 1785141731.197821802
+first_header_timestamp_ns: 1785141730893287317
+first_header_timestamp_sec: 1785141730.893287317
+first_selected_timestamp_basis: header timestamp
+first_selected_timestamp_ns: 1785141730893287317
+first_selected_timestamp_sec: 1785141730.893287317
+last_bag_timestamp_ns: 1785141936311176063
+last_bag_timestamp_sec: 1785141936.311176063
+last_header_timestamp_ns: 1785141936288498824
+last_header_timestamp_sec: 1785141936.288498824
+last_selected_timestamp_basis: header timestamp
+last_selected_timestamp_ns: 1785141936288498824
+last_selected_timestamp_sec: 1785141936.288498824
+
+[tracker2]
+topic: /tracker2/vive_pose_abs
+message_count: 2079
+first_bag_timestamp_ns: 1785141731197824746
+first_bag_timestamp_sec: 1785141731.197824746
+first_header_timestamp_ns: 1785141730932304102
+first_header_timestamp_sec: 1785141730.932304102
+first_selected_timestamp_basis: header timestamp
+first_selected_timestamp_ns: 1785141730932304102
+first_selected_timestamp_sec: 1785141730.932304102
+last_bag_timestamp_ns: 1785141936040122601
+last_bag_timestamp_sec: 1785141936.040122601
+last_header_timestamp_ns: 1785141936009029448
+last_header_timestamp_sec: 1785141936.009029448
+last_selected_timestamp_basis: header timestamp
+last_selected_timestamp_ns: 1785141936009029448
+last_selected_timestamp_sec: 1785141936.009029448
+
+[tracker3]
+topic: /tracker3/vive_pose_abs
+message_count: 267
+first_bag_timestamp_ns: 1785141731379721274
+first_bag_timestamp_sec: 1785141731.379721274
+first_header_timestamp_ns: 1785141731348879021
+first_header_timestamp_sec: 1785141731.348879021
+first_selected_timestamp_basis: header timestamp
+first_selected_timestamp_ns: 1785141731348879021
+first_selected_timestamp_sec: 1785141731.348879021
+last_bag_timestamp_ns: 1785141932702262793
+last_bag_timestamp_sec: 1785141932.702262793
+last_header_timestamp_ns: 1785141932681350418
+last_header_timestamp_sec: 1785141932.681350418
+last_selected_timestamp_basis: header timestamp
+last_selected_timestamp_ns: 1785141932681350418
+last_selected_timestamp_sec: 1785141932.681350418
+
+[camera]
+topic: /locobot/camera/camera/color/image_raw/compressed
+message_count: 6183
+first_bag_timestamp_ns: 1785141729945890479
+first_bag_timestamp_sec: 1785141729.945890479
+first_header_timestamp_ns: 1785141729900582764
+first_header_timestamp_sec: 1785141729.900582764
+first_selected_timestamp_basis: header timestamp
+first_selected_timestamp_ns: 1785141729900582764
+first_selected_timestamp_sec: 1785141729.900582764
+last_bag_timestamp_ns: 1785141936293099328
+last_bag_timestamp_sec: 1785141936.293099328
+last_header_timestamp_ns: 1785141936250285156
+last_header_timestamp_sec: 1785141936.250285156
+last_selected_timestamp_basis: header timestamp
+last_selected_timestamp_ns: 1785141936250285156
+last_selected_timestamp_sec: 1785141936.250285156
+first_header_frame_id: locobot/camera_color_optical_frame
+
+[nearest poses to first image]
+first_image_selected_timestamp_basis: header timestamp
+first_image_selected_timestamp_ns: 1785141729900582764
+first_image_selected_timestamp_sec: 1785141729.900582764
+
+tracker1:
+  tracker_selected_timestamp_basis: header timestamp
+  tracker_selected_timestamp_ns: 1785141730893287317
+  tracker_selected_timestamp_sec: 1785141730.893287317
+  signed_time_difference_sec (tracker - image): 0.992704553
+  absolute_time_difference_sec: 0.992704553
+  translation: x=3.2378617932684555, y=1.9823365227555394, z=-1.3166682947655186
+  quaternion: x=0.6963516606460474, y=0.05417185476283017, z=0.7133078381580341, w=-0.05789326001861881
+  frame_id: world
+  child_frame_id: tracker1_frame
+
+tracker2:
+  tracker_selected_timestamp_basis: header timestamp
+  tracker_selected_timestamp_ns: 1785141730932304102
+  tracker_selected_timestamp_sec: 1785141730.932304102
+  signed_time_difference_sec (tracker - image): 1.031721338
+  absolute_time_difference_sec: 1.031721338
+  translation: x=6.729363917208223, y=-5.256189828491316, z=-1.2762070635915812
+  quaternion: x=0.5811688998777141, y=0.42554871703422964, z=0.5441980261859596, w=-0.43011559859348264
+  frame_id: world
+  child_frame_id: tracker2_frame
+
+tracker3:
+  tracker_selected_timestamp_basis: header timestamp
+  tracker_selected_timestamp_ns: 1785141731348879021
+  tracker_selected_timestamp_sec: 1785141731.348879021
+  signed_time_difference_sec (tracker - image): 1.448296257
+  absolute_time_difference_sec: 1.448296257
+  translation: x=4.966223768427329, y=0.07337621391469544, z=-1.348095499536894
+  quaternion: x=0.4310907233903791, y=-0.5619814857765445, z=0.4358509607857314, w=0.555311943090914
+  frame_id: world
+  child_frame_id: tracker3_frame

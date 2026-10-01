@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  locobot_ros2:
+    build:
+      context: .
+      dockerfile: dockerfile.locobot
+    image: locobot_humble_dev
+    container_name: locobot_humble_dev
+    network_mode: host
+    privileged: true
+    environment:
+      - DISPLAY=${DISPLAY}
+      - XAUTHORITY=/root/.Xauthority
+      - QT_X11_NO_MITSHM=1
+      - ROS_DOMAIN_ID=30
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /home/locobot/.Xauthority:/root/.Xauthority:ro
+      - ../:/workspace:rw
+      - /dev:/dev:rw
+    stdin_open: true
+    tty: true
+    command: /bin/bash

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>locobot_urdf_export</name>
+  <version>0.1.0</version>
+  <description>Portable locobot_wx200 URDF and mesh resources.</description>
+  <maintainer email="locobot@example.com">Locobot</maintainer>
+  <license>BSD-3-Clause</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

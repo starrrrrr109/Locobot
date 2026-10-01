@@ -1,0 +1,9 @@
+image_topic: /locobot/camera/camera/color/image_raw/compressed
+bag_timestamp_ns: 1785141729945890479
+bag_timestamp_sec: 1785141729.945890479
+header_timestamp_ns: 1785141729900582764
+header_timestamp_sec: 1785141729.900582764
+header_frame_id: locobot/camera_color_optical_frame
+selected_timestamp_basis: header timestamp
+selected_timestamp_ns: 1785141729900582764
+selected_timestamp_sec: 1785141729.900582764

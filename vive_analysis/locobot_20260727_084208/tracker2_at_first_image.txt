@@ -1,0 +1,16 @@
+tracker: tracker2
+selected timestamp basis: tracker=header timestamp; first_image=header timestamp
+tracker2 timestamp ns: 1785141730932304102
+tracker2 timestamp sec: 1785141730.932304102
+first image timestamp ns: 1785141729900582764
+first image timestamp sec: 1785141729.900582764
+time difference sec (tracker - image): 1.031721338
+absolute time difference sec: 1.031721338
+translation: x=6.729363917208223, y=-5.256189828491316, z=-1.2762070635915812
+quaternion: x=0.5811688998777141, y=0.42554871703422964, z=0.5441980261859596, w=-0.43011559859348264
+frame_id: world
+child_frame_id: tracker2_frame
+tracker bag timestamp ns: 1785141731197824746
+tracker header timestamp ns: 1785141730932304102
+first image bag timestamp ns: 1785141729945890479
+first image header timestamp ns: 1785141729900582764

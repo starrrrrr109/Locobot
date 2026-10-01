@@ -1,0 +1,55 @@
+# =========================
+# User-requested ignores
+# =========================
+system_remake.md
+SYSTEM_SCAN_REPORT.md
+progress_report.md
+patch.py
+fix.py
+config/
+TO_DO.md
+rosbags/
+*.db
+*.bag
+*.ply
+# Archived / legacy ROS1 content
+ros1_old_files/
+
+# legacy ROS1 docker content
+Docker/NUC/
+
+# motor fixing files
+motor_files/
+
+# Local editor settings
+.vscode/
+
+# =========================
+# Colcon build artifacts
+# =========================
+# Workspace-level outputs
+build/
+install/
+log/
+
+# Nested workspace outputs (e.g. ros2_ws)
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# Generic colcon output dirs in any sub-workspace
+**/build/
+**/install/
+**/log/
+
+# =========================
+# Python cache / misc
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.swp
+*.swo
+# 忽略系統檔
+.DS_Store
+EOF
