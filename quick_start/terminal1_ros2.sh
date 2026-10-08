@@ -20,6 +20,7 @@ SHUTTING_DOWN=0
 LAUNCH_PID=""
 CAMERA_TF_BRIDGE_PID=""
 GAMEPAD_MODE_MANAGER_PID=""
+DOWN_SAMPLE_PID="" # 降採樣宣告PID
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROBOT_MODEL="${ROBOT_MODEL:-locobot_wx200}"
 BASE_TYPE="${BASE_TYPE:-kobuki}"
@@ -95,6 +96,13 @@ cleanup_on_signal() {
         wait "${GAMEPAD_MODE_MANAGER_PID}" 2>/dev/null || true
     fi
 
+    # 【新增點雲降採樣】：安全關閉節點
+    if [ -n "${DOWN_SAMPLE_PID}" ] && kill -0 "${DOWN_SAMPLE_PID}" 2>/dev/null; then
+        echo "[terminal1] Stopping PointCloud Downsampler..."
+        kill -INT "${DOWN_SAMPLE_PID}" 2>/dev/null || true
+        wait "${DOWN_SAMPLE_PID}" 2>/dev/null || true
+    fi
+
     finish_script 0
 }
 
@@ -129,6 +137,11 @@ ros2 run wfh_locobot_control gamepad_mode_manager \
     -p record_script:="${GAMEPAD_RECORD_SCRIPT}" &
 GAMEPAD_MODE_MANAGER_PID=$!
 
+# 【新增點雲降採樣】：在背景啟動降採樣腳本，並記錄 PID
+echo "[terminal1] Starting PointCloud Downsampler using ros2 run..."
+ros2 run nav2 pointcloud_downsampler &
+DOWN_SAMPLE_PID=$!
+
 # 檢查 Docker image 是否存在，若不存在則進行 build
 if [[ "$(docker images -q locobot_humble_dev 2> /dev/null)" == "" ]]; then
     echo "Image not found. Building docker image..."
@@ -158,6 +171,12 @@ fi
 if [ -n "${GAMEPAD_MODE_MANAGER_PID}" ] && kill -0 "${GAMEPAD_MODE_MANAGER_PID}" 2>/dev/null; then
     kill -INT "${GAMEPAD_MODE_MANAGER_PID}" 2>/dev/null || true
     wait "${GAMEPAD_MODE_MANAGER_PID}" 2>/dev/null || true
+fi
+
+# 【新增點雲降採樣】：正常退出時的清理檢查
+if [ -n "${DOWN_SAMPLE_PID}" ] && kill -0 "${DOWN_SAMPLE_PID}" 2>/dev/null; then
+    kill -INT "${DOWN_SAMPLE_PID}" 2>/dev/null || true
+    wait "${DOWN_SAMPLE_PID}" 2>/dev/null || true
 fi
 
 finish_script "${LAUNCH_EXIT_CODE}"

@@ -26,6 +26,7 @@ setup(
         'console_scripts': [
             'goal_sender = nav2.goal_sender:main',
             'keyboard_control = nav2.keyboard_control:main',
+            'pointcloud_downsampler = nav2.down_sample:main',
         ],
     },
 )
